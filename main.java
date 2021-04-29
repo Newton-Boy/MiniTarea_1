@@ -3,9 +3,9 @@ public class main{
 
     Pokémon Charmander= new Fire("Salamandra","Charmander",15);
     Pokémon Squarel= new Water("Donatelo", "Squarel",20);
-    Pokémon Bulbasor= ne Plant("Cebolla", "Bulbasor", 12);
+    Pokémon Bulbasor= new Plant("Cebolla", "Bulbasor", 12);
 
-    
+
 
   }
 }
