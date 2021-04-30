@@ -1,21 +1,54 @@
-public class Fire extends PokectMonster{
+/**
+*Clase Fire
+*Extiende de Pokémon e implementa
+*los metodos PokectMonster con un
+*Double Dispach para los tipo fuego
+*/
+public class Fire extends Pokémon{
+  /**
+  *Constructor Fire
+  *Crea al Pokémon de tipo fuego
+  */
   public Fire(String n, String s, int h){
     super(n,s,h,"Fuego");
   }
 
-  public void Battle(Pokémon p){
-    p.AttackToFire(this);
+  /**
+  *Battle: PokectMonster-->void
+  *Un Pokémon de tipo fuego ataca a 
+  *un PokectMonster p
+  */
+  public void Battle(PokectMonster p){
+    p.AttackByFire(this);
   }
 
-  public void AttackToFire(Fire fire){
-    fire.TakeDamage(5);
+  /**
+  *AttackByFire: Fire-->void
+  *El Pokémon tipo fuego recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo fuego
+  */
+  public void AttackByFire(Fire fire){
+    fire.DealDamage(5,this);
   }
 
-  public void AttackToPlant(Plant plant){
-    plant.TakeDamage(10);
+  /**
+  *AttackByPlant: Fire-->void
+  *El Pokémon tipo fuego recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo planta
+  */
+  public void AttackByPlant(Plant plant){
+    plant.DealDamage(5,this);
   }
 
-  public void AttackToWater(Water water){
-    water.TakeDamage(5);
+  /**
+  *AttackByWater: Water-->void
+  *El Pokémon tipo fuego recibe 10
+  *puntos de daño cuando es atacado por 
+  *otro del tipo agua
+  */
+  public void AttackByWater(Water water){
+    water.DealDamage(10,this);
   }
 }

@@ -1,21 +1,54 @@
-public class Water extends PokectMonster{
+/**
+*Clase Water
+*Extiende de Pokémon e implementa
+*los metodos PokectMonster con un
+*Double Dispach para los tipo agua
+*/
+public class Water extends Pokémon{
+  /**
+  *Constructor Water
+  *Crea al Pokémon de tipo agua
+  */
   public Water(String n, String s, int h){
     super(n,s,h,"Agua");
   }
 
-  public void Battle(Pokémon p){
-    p.AttackToWater(this);
+  /**
+  *Battle: PokectMonster-->void
+  *Un Pokémon de tipo agua ataca a 
+  *un PokectMonster p
+  */
+  public void Battle(PokectMonster p){
+    p.AttackByWater(this);
   }
 
-  public void AttackToFire(Fire fire){
-    fire.TakeDamage(10);
+  /**
+  *AttackByFire: Fire-->void
+  *El Pokémon tipo agua recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo fuego
+  */
+  public void AttackByFire(Fire fire){
+    fire.DealDamage(5,this);
   }
 
-  public void AttackToPlant(Plant plant){
-    plant.TakeDamage(5);
+  /**
+  *AttackByPlant: Plant-->void
+  *El Pokémon tipo agua recibe 10
+  *puntos de daño cuando es atacado por 
+  *otro del tipo planta
+  */
+  public void AttackByPlant(Plant plant){
+    plant.DealDamage(10,this);
   }
 
-  public void AttackToWater(Water water){
-    water.TakeDamage(5);
+  /**
+  *AttackByWater: Water-->void
+  *El Pokémon tipo agua recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo agua
+  */
+  public void AttackByWater(Water water){
+    water.DealDamage(5,this);
   }
 }

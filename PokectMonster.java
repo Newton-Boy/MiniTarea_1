@@ -1,50 +1,38 @@
-public abstract class PokectMonster implements Pokémon{
-  private String name;
-  private String species;
-  private int hp;
-  private String type;
+/**
+*Interface PokectMonster
+*Promete los métodos de combate
+*entre los distintos PokectMonster(Pokémons)
+*que se usarán
+*/
+interface PokectMonster{
+  /**
+  *Battle: PokectMonster-->void
+  *Realiza combate entre un PokectMonster
+  *a otro
+  */
+  void Battle(PokectMonster P);
 
-  public PokectMonster(String n,String s, int h,String t){
-    name=n;
-    species=s;
-    hp=h;
-    type=t;
-  }
+  /**
+  *AttackByPlant: Plant-->void
+  *Determina que ocurre en caso que
+  *un PokectMonster sea atacado por 
+  *otro del tipo planta
+  */
+  void AttackByPlant(Plant plant);
 
-  public String getName(){
-    return this.name;
-  }
+  /**
+  *AttackByFire: Fire-->void
+  *Determina que ocurre en caso que
+  *un PokectMonster sea atacado por 
+  *otro del tipo fuego
+  */
+  void AttackByFire(Fire fire);
 
-  public PokectMonster setName(String n){
-    this.name=n;
-    return this;
-  }
-
-  public String getSpecies(){
-    return this.species;
-  }
-
-  public int getHP(){
-    return this.hp;
-  }
-
-  public PokectMonster setHP(int h){
-    this.hp=h;
-    return this;
-  }
-
-  public String getType(){
-    return this.type;
-  }
-
-  public void TakeDamage(int d){
-    int h= this.getHP();
-    if ((h-d)<=0){
-      this.setHP(0);
-      System.out.println(this.getName()+" ha quedado inconsciente");
-    }
-    else{
-      this.setHP(h-d);
-    }
-  }
+  /**
+  *AttackByWater: Water-->void
+  *Determina que ocurre en caso que
+  *un PokectMonster sea atacado por 
+  *otro del tipo agua
+  */
+  void AttackByWater(Water water);
 }

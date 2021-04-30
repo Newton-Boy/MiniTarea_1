@@ -1,21 +1,54 @@
-public class Plant extends PokectMonster{
+/**
+*Clase Plant
+*Extiende de Pokémon e implementa
+*los metodos PokectMonster con un
+*Double Dispach para los tipo planta
+*/
+public class Plant extends Pokémon{
+  /**
+  *Constructor Plant
+  *Crea al Pokémon de tipo planta
+  */
   public Plant(String n, String s, int h){
     super(n,s,h,"Planta");
   }
 
-  public void Battle(Pokémon p){
-    p.AttackToPlant(this);
+  /**
+  *Battle: PokectMonster-->void
+  *Un Pokémon de tipo planta ataca a 
+  *un PokectMonster p
+  */
+  public void Battle(PokectMonster p){
+    p.AttackByPlant(this);
   }
 
-  public void AttackToFire(Fire fire){
-    fire.TakeDamage(5);
+  /**
+  *AttackByFire: Fire-->void
+  *El Pokémon tipo planta recibe 10
+  *puntos de daño cuando es atacado por 
+  *otro del tipo fuego
+  */
+  public void AttackByFire(Fire fire){
+    fire.DealDamage(10,this);
   }
 
-  public void AttackToPlant(Plant plant){
-    plant.TakeDamage(5);
+  /**
+  *AttackByPlant: Plant-->void
+  *El Pokémon tipo planta recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo planta
+  */
+  public void AttackByPlant(Plant plant){
+    plant.DealDamage(5,this);
   }
 
-  public void AttackToWater(Water water){
-    water.TakeDamage(10);
+  /**
+  *AttackByWater: Water-->void
+  *El Pokémon tipo planta recibe 5
+  *puntos de daño cuando es atacado por 
+  *otro del tipo agua
+  */
+  public void AttackByWater(Water water){
+    water.DealDamage(5,this);
   }
 }
